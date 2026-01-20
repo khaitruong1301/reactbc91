@@ -1,10 +1,20 @@
 import { createRoot } from 'react-dom/client'
+import { HeaderHome } from './components/HeaderHome'
+import HomePage from './pages/HomePage'
+import BaiTapLayout from './pages/BaiTapLayout'
+import DataBinding from './pages/DataBinding'
+import HandleEvent from './pages/HandleEvent'
+import React from 'react'
+import RenderCondition from './pages/RenderCondition'
 
 
 createRoot(document.getElementById('root')).render(
   <div>
-    <h1>Hello cybersoft</h1>
-    <img src='/vite.svg' alt='111' />
+      {/* <HomePage /> */}
+      {/* <BaiTapLayout /> */}
+      {/* <DataBinding /> */}
+      {/* <HandleEvent /> */}
+      <RenderCondition />
   </div>
 )
 
