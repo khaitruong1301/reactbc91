@@ -6,6 +6,15 @@ import DataBinding from './pages/DataBinding'
 import HandleEvent from './pages/HandleEvent'
 import React from 'react'
 import RenderCondition from './pages/RenderCondition'
+import ChangeNumber from './pages/StateDemo/ChangeNumber'
+import StyleComponentDemo from './pages/StyleComponent/StyleComponentDemo'
+//css cho toàn ứng dụng
+import './assets/css/index.css'
+import ChangeFontSize from './pages/StateDemo/ChangeFontSize'
+import CarDemo from './pages/StateDemo/CarDemo'
+import TinderClone from './pages/StateDemo/TinderClone'
+import Propdemo from './pages/PropsDemo/Propdemo'
+
 
 
 createRoot(document.getElementById('root')).render(
@@ -14,7 +23,13 @@ createRoot(document.getElementById('root')).render(
       {/* <BaiTapLayout /> */}
       {/* <DataBinding /> */}
       {/* <HandleEvent /> */}
-      <RenderCondition />
+      {/* <RenderCondition /> */}
+      {/* <ChangeNumber /> */}
+      {/* <StyleComponentDemo /> */}
+      {/* <ChangeFontSize /> */}
+      {/* <CarDemo /> */}
+      {/* <TinderClone /> */}
+      <Propdemo />
   </div>
 )
 
