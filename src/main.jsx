@@ -14,6 +14,10 @@ import ChangeFontSize from './pages/StateDemo/ChangeFontSize'
 import CarDemo from './pages/StateDemo/CarDemo'
 import TinderClone from './pages/StateDemo/TinderClone'
 import Propdemo from './pages/PropsDemo/Propdemo'
+import RenderWithMap from './pages/PropsDemo/RenderWithMap'
+import ProductList from './pages/PropsDemo/BTRenderProduct/ProductList'
+import LiftingStateUpDemo from './pages/LiftingStateUpDemo/LiftingStateUpDemo'
+import ExerciseCarStore from './pages/LiftingStateUpDemo/ExerciseCarStore'
 
 
 
@@ -29,7 +33,11 @@ createRoot(document.getElementById('root')).render(
       {/* <ChangeFontSize /> */}
       {/* <CarDemo /> */}
       {/* <TinderClone /> */}
-      <Propdemo />
+      {/* <Propdemo /> */}
+      {/* <RenderWithMap /> */}
+      {/* <ProductList /> */}
+      {/* <LiftingStateUpDemo /> */}
+      <ExerciseCarStore />
   </div>
 )
 
