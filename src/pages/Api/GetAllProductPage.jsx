@@ -1,6 +1,7 @@
 //rafce
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom';
 
 const GetAllProductPage = () => {
     const [arrProduct, setArrayProduct] = useState([
@@ -38,7 +39,6 @@ const GetAllProductPage = () => {
         } catch (err) {
             console.log(err)
         }
-
     }
     //useEffect dùng để làm gì? Cho mấy trường hợp
     //TH1: dependency mảng rỗng: chạy 1 lần duy nhất khi component khởi xong html => tương tự window onload  (thường dùng cho các api get all)
@@ -62,7 +62,7 @@ const GetAllProductPage = () => {
                             <div className='card-body'>
                                 <h3>{item.name}</h3>
                                 <p>{item.price}</p>
-                                <button className='btn btn-success'>Add to cart</button>
+                                <NavLink to={`/detail/${item.id}`} className='btn btn-success'>Detail</NavLink>
                             </div>
                         </div>
                     </div>

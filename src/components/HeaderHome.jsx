@@ -23,11 +23,15 @@ export const HeaderHome = () => {
                 <li className="nav-item">
                     <NavLink className={({isActive}) => isActive ? "nav-link bg-light text-dark": "nav-link"} to="/register" aria-current="page" >Register <span className="visually-hidden">(current)</span></NavLink>
                 </li>
-                             <li className="nav-item">
+                <li className="nav-item">
                     <NavLink  className={({isActive}) => isActive ? "nav-link bg-light text-dark": "nav-link"} to="/about" aria-current="page">About <span className="visually-hidden">(current)</span></NavLink>
                 </li>
                              <li className="nav-item">
                     <NavLink  className={({isActive}) => isActive ? "nav-link bg-light text-dark": "nav-link"} to="/contact" aria-current="page">Contact <span className="visually-hidden">(current)</span></NavLink>
+                </li>
+
+                 <li className="nav-item">
+                    <NavLink  className={({isActive}) => isActive ? "nav-link bg-light text-dark": "nav-link"} to="/search" aria-current="page">Search <span className="visually-hidden">(current)</span></NavLink>
                 </li>
 
                  <li className="nav-item dropdown">
