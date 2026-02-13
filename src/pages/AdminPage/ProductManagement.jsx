@@ -51,7 +51,21 @@ const ProductManagement = () => {
               <td>{item.price}</td>
               <td>
                 <NavLink to={`/admin/products/edit/${item.id}`} className='btn btn-primary mx-2'>Edit</NavLink>
-                <button className='btn btn-danger'>Delete</button>
+                <button className='btn btn-danger' onClick={async (e) => {
+                  try {
+                    const kq = window.confirm('Bạn có muốn xoá không ?');
+                    if (kq) {
+                      const res = await axios.delete(`https://apistore.cybersoft.edu.vn/api/Product/${item.id}`);
+                      alert('xoá thành công!');
+                      //Sau khi xoá thành công thì gọi lại api getApi
+                      getAllProductApi();
+                    }
+
+                  } catch (err) {
+                    alert('xoá thất bại');
+                    console.log(err);
+                  }
+                }}>Delete</button>
               </td>
             </tr>
           })}

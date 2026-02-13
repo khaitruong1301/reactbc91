@@ -26,6 +26,7 @@ import GetAllProductPage from './pages/Api/GetAllProductPage'
 import Search from './pages/Search'
 import CreateProduct from './pages/CreateProduct'
 import EditProduct from './pages/EditProduct'
+import ProductAddNewEdit from './pages/ProductAddnewEdit'
 
 createRoot(document.getElementById('root')).render(
 
@@ -56,6 +57,10 @@ createRoot(document.getElementById('root')).render(
                 <Route path='products' element={<ProductManagement />}></Route>
                 <Route path='products/addNew' element={<CreateProduct />}></Route>
                 <Route path='products/edit/:id' element={<EditProduct />}></Route>
+
+
+                
+                <Route path='product/:id?' element={<ProductAddNewEdit />}></Route> 
             </Route>
         </Routes>
     </BrowserRouter>

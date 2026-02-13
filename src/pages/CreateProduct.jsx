@@ -1,4 +1,7 @@
+import axios from 'axios'
+import { useFormik } from 'formik'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 //Bước 1: tạo giao diện html cho component để người dùng có chỗ input data vào như API
@@ -6,16 +9,51 @@ import React from 'react'
 
 
 const CreateProduct = () => {
+
+  const navigate =useNavigate();
+  const productInfo = useFormik({
+    initialValues: {
+      "id": 0,
+      "name": "string",
+      "price": 0,
+      "description": "string",
+      "shortDescription": "string",
+      "quantity": 0,
+      "imgLink": "string"
+    },
+    onSubmit: async (values) => {
+      console.log(values)
+      //Gọi api create product
+      try{
+        const res = await axios.post(`https://apistore.cybersoft.edu.vn/api/Product/addNew`,values);
+
+        console.log(res.data.content);
+        //Nếu thành công 
+        alert('Thêm sản phẩm thành công !');
+        //Thành công chuyển vào trang admin/products
+        navigate('/admin/products');
+
+
+
+      }catch(err){
+        console.log(err.response.data)
+        alert('Thêm sản phẩm thất bại !');
+
+      }
+
+    }
+  })
+
+
   return (
-    <form className="container mt-4 ">
+    <div className="container mt-4 ">
       <h1 className="card-header fw-bold mt-2">
         Product Information
       </h1>
       <div className="card shadow-sm ">
 
-
         <div className="card-body">
-          <form>
+          <form onSubmit={productInfo.handleSubmit}>
             {/* ID */}
             <div className="mb-3">
               <label className="form-label">ID</label>
@@ -24,13 +62,8 @@ const CreateProduct = () => {
                 className="form-control"
                 name="id"
                 placeholder="Enter product ID"
-
-
-
-
-
-
-                
+                value={productInfo.values.id}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -42,6 +75,8 @@ const CreateProduct = () => {
                 className="form-control"
                 name="name"
                 placeholder="Enter product name"
+                 value={productInfo.values.name}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -53,6 +88,8 @@ const CreateProduct = () => {
                 className="form-control"
                 name="price"
                 placeholder="Enter price"
+                 value={productInfo.values.price}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -64,6 +101,8 @@ const CreateProduct = () => {
                 className="form-control"
                 name="quantity"
                 placeholder="Enter quantity"
+                 value={productInfo.values.quantity}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -75,6 +114,8 @@ const CreateProduct = () => {
                 className="form-control"
                 name="shortDescription"
                 placeholder="Short description"
+                 value={productInfo.values.shortDescription}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -86,6 +127,8 @@ const CreateProduct = () => {
                 name="description"
                 rows="3"
                 placeholder="Full description"
+                 value={productInfo.values.description}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -97,6 +140,8 @@ const CreateProduct = () => {
                 className="form-control"
                 name="imgLink"
                 placeholder="Image URL"
+                 value={productInfo.values.imgLink}
+                onInput={productInfo.handleChange}
               />
             </div>
 
@@ -107,7 +152,7 @@ const CreateProduct = () => {
           </form>
         </div>
       </div>
-    </form>
+    </div>
   )
 }
 
