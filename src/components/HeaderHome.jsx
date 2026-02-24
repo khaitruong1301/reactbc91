@@ -42,6 +42,14 @@ export const HeaderHome = () => {
                         <NavLink className="dropdown-item" to="/demo-useNavigate">Demo use navigate</NavLink>
                     </div>
                 </li>
+
+                  <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux - demo</a>
+                    <div className="dropdown-menu" aria-labelledby="dropdownId">
+                        <NavLink className="dropdown-item" to="/redux-changenumber">Change number</NavLink>
+                        <NavLink className="dropdown-item" to="/redux-change-car">Change car</NavLink>
+                    </div>
+                </li>
                 
 
             </ul>

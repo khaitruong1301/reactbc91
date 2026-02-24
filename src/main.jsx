@@ -27,42 +27,51 @@ import Search from './pages/Search'
 import CreateProduct from './pages/CreateProduct'
 import EditProduct from './pages/EditProduct'
 import ProductAddNewEdit from './pages/ProductAddnewEdit'
+//import store và react redux : để nối với ứng dụng
+import { Provider } from 'react-redux';
+import { store } from './redux/store'
+import DemoChangeNumber from './pages/ReduxDemo/DemoChangeNumber'
+import DemoChangeCarRedux from './pages/ReduxDemo/DemoChangeCarRedux'
+
+
 
 createRoot(document.getElementById('root')).render(
 
     <BrowserRouter>
-        {/* <HeaderHome /> */}
-        <Routes>
-            <Route path='' element={<HomeTemplate />} >
-                <Route index element={<GetAllProductPage />} ></Route>
-                <Route path='index' element={<HomePage />} ></Route>
-                <Route path='data-binding' element={<DataBinding />}></Route>
-                <Route path='change-carcolor' element={<CarDemo />}></Route>
-                <Route path='register' element={<Register />}></Route>
-                <Route path='about' element={<About />}></Route>
-                <Route path='contact' element={<Contact />}></Route>
-                <Route path='login' element={<Login />}></Route>
-                <Route path='cart' element={<BaiTapGioHang />}></Route>
-                <Route path='demo-useNavigate' element={<DemoUserNavigate />}></Route>
-                <Route path='profile' element={<Profile />}></Route>
-                <Route path='forgot-pass' element={<ForgotPass />}></Route>
-                <Route path='detail/:id' element={<Detail />}></Route>
-                <Route path='search' element={<Search />}></Route>
-            </Route>
-        </Routes>
-        <Routes>
-            <Route path='admin' element={<AdminTemplate />}>
-                <Route index element={<AdminDashBoard />}></Route>
-                <Route path='users' element={<UserManagement />}></Route>
-                <Route path='products' element={<ProductManagement />}></Route>
-                <Route path='products/addNew' element={<CreateProduct />}></Route>
-                <Route path='products/edit/:id' element={<EditProduct />}></Route>
+        <Provider store={store}>
+            {/* <HeaderHome /> */}
+            <Routes>
+                <Route path='' element={<HomeTemplate />} >
+                    <Route index element={<GetAllProductPage />} ></Route>
+                    <Route path='index' element={<HomePage />} ></Route>
+                    <Route path='data-binding' element={<DataBinding />}></Route>
+                    <Route path='change-carcolor' element={<CarDemo />}></Route>
+                    <Route path='register' element={<Register />}></Route>
+                    <Route path='about' element={<About />}></Route>
+                    <Route path='contact' element={<Contact />}></Route>
+                    <Route path='login' element={<Login />}></Route>
+                    <Route path='cart' element={<BaiTapGioHang />}></Route>
+                    <Route path='demo-useNavigate' element={<DemoUserNavigate />}></Route>
+                    <Route path='profile' element={<Profile />}></Route>
+                    <Route path='forgot-pass' element={<ForgotPass />}></Route>
+                    <Route path='detail/:id' element={<Detail />}></Route>
+                    <Route path='search' element={<Search />}></Route>
+                    <Route path='redux-changenumber' element={<DemoChangeNumber />}></Route>
 
-
-                
-                <Route path='product/:id?' element={<ProductAddNewEdit />}></Route> 
-            </Route>
-        </Routes>
+                    <Route path='redux-change-car' element={<DemoChangeCarRedux />}></Route>
+                </Route>
+            </Routes>
+            <Routes>
+                <Route path='admin' element={<AdminTemplate />}>
+                    <Route index element={<AdminDashBoard />}></Route>
+                    <Route path='users' element={<UserManagement />}></Route>
+                    <Route path='products' element={<ProductManagement />}></Route>
+                    <Route path='products/addNew' element={<CreateProduct />}></Route>
+                    <Route path='products/edit/:id' element={<EditProduct />}></Route>
+                    <Route path='product/:id?' element={<ProductAddNewEdit />}></Route>
+                </Route>
+            </Routes>
+        </Provider>
     </BrowserRouter>
 
 )
