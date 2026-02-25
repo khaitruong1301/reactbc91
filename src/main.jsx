@@ -32,6 +32,10 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store'
 import DemoChangeNumber from './pages/ReduxDemo/DemoChangeNumber'
 import DemoChangeCarRedux from './pages/ReduxDemo/DemoChangeCarRedux'
+import TinderClone from './pages/StateDemo/TinderClone'
+import DemoTinderCloneRedux from './pages/ReduxDemo/DemoTinderCloneRedux'
+import LiftingStateUpDemo from './pages/LiftingStateUpDemo/LiftingStateUpDemo'
+import BTXemChiTietRedux from './pages/ReduxDemo/BTXemChiTietRedux/BTXemChiTietRedux'
 
 
 
@@ -59,6 +63,11 @@ createRoot(document.getElementById('root')).render(
                     <Route path='redux-changenumber' element={<DemoChangeNumber />}></Route>
 
                     <Route path='redux-change-car' element={<DemoChangeCarRedux />}></Route>
+                    <Route path='tinder' element={<TinderClone />}></Route>
+
+                    <Route path='redux-tinder-clone' element={<DemoTinderCloneRedux />}></Route>
+                    <Route path='lifting-stateup' element={<LiftingStateUpDemo />}></Route>
+                    <Route path='bt-xem-chi-tiet-redux' element={<BTXemChiTietRedux />}></Route>
                 </Route>
             </Routes>
             <Routes>
