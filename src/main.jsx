@@ -38,6 +38,9 @@ import LiftingStateUpDemo from './pages/LiftingStateUpDemo/LiftingStateUpDemo'
 import BTXemChiTietRedux from './pages/ReduxDemo/BTXemChiTietRedux/BTXemChiTietRedux'
 import ExerciseCarStore from './pages/LiftingStateUpDemo/ExerciseCarStore'
 import BaiTapGioHangRedux from './pages/ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux'
+import HookToiUu from './pages/HookToiUu/HookToiUu'
+import DemoCustomHook from './pages/CustomHooks/DemoCustomHook'
+import HOCDemo from './pages/HOCDemo/HOCDemo'
 
 
 
@@ -63,16 +66,17 @@ createRoot(document.getElementById('root')).render(
                     <Route path='detail/:id' element={<Detail />}></Route>
                     <Route path='search' element={<Search />}></Route>
                     <Route path='redux-changenumber' element={<DemoChangeNumber />}></Route>
-
                     <Route path='redux-change-car' element={<DemoChangeCarRedux />}></Route>
                     <Route path='tinder' element={<TinderClone />}></Route>
-
                     <Route path='redux-tinder-clone' element={<DemoTinderCloneRedux />}></Route>
                     <Route path='lifting-stateup' element={<LiftingStateUpDemo />}></Route>
                     <Route path='bt-xem-chi-tiet-redux' element={<BTXemChiTietRedux />}></Route>
                     <Route path='bt-gioHang' element={<BaiTapGioHang />}></Route>
-                     <Route path='bt-gioHang-redux' element={<BaiTapGioHangRedux />}></Route>
-                     <Route path='*' element={<Navigate to={'/'} />}></Route>
+                    <Route path='bt-gioHang-redux' element={<BaiTapGioHangRedux />}></Route>
+                    <Route path='hook-toi-uu' element={<HookToiUu />}></Route>
+                    <Route path='custom-hook' element={<DemoCustomHook />}></Route>
+                    <Route path='hoc-demo' element={<HOCDemo />}></Route>
+                    <Route path='*' element={<Navigate to={'/'} />}></Route>
                 </Route>
             </Routes>
             <Routes>
