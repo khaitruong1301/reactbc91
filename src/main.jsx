@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage'
 import DataBinding from './pages/DataBinding'
 import CarDemo from './pages/StateDemo/CarDemo'
 //import react router dom
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { HeaderHome } from './components/HeaderHome'
 import Register from './pages/Register'
 import About from './pages/About'
@@ -36,6 +36,8 @@ import TinderClone from './pages/StateDemo/TinderClone'
 import DemoTinderCloneRedux from './pages/ReduxDemo/DemoTinderCloneRedux'
 import LiftingStateUpDemo from './pages/LiftingStateUpDemo/LiftingStateUpDemo'
 import BTXemChiTietRedux from './pages/ReduxDemo/BTXemChiTietRedux/BTXemChiTietRedux'
+import ExerciseCarStore from './pages/LiftingStateUpDemo/ExerciseCarStore'
+import BaiTapGioHangRedux from './pages/ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux'
 
 
 
@@ -68,6 +70,9 @@ createRoot(document.getElementById('root')).render(
                     <Route path='redux-tinder-clone' element={<DemoTinderCloneRedux />}></Route>
                     <Route path='lifting-stateup' element={<LiftingStateUpDemo />}></Route>
                     <Route path='bt-xem-chi-tiet-redux' element={<BTXemChiTietRedux />}></Route>
+                    <Route path='bt-gioHang' element={<BaiTapGioHang />}></Route>
+                     <Route path='bt-gioHang-redux' element={<BaiTapGioHangRedux />}></Route>
+                     <Route path='*' element={<Navigate to={'/'} />}></Route>
                 </Route>
             </Routes>
             <Routes>
