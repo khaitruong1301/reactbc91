@@ -18,7 +18,9 @@ const HOCDemo = () => {
 
   const [Component, setComponent] = useState(<Register />);
 
-  const ModalComponent = ModalHOC(Component);
+  const ModalComponent = ModalHOC(Component); //HOC truyền component 
+
+  //Container component truyền jsx qua props 
 
   return (
     <div className='container'>

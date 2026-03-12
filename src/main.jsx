@@ -41,6 +41,7 @@ import BaiTapGioHangRedux from './pages/ReduxDemo/BaiTapGioHangRedux/BaiTapGioHa
 import HookToiUu from './pages/HookToiUu/HookToiUu'
 import DemoCustomHook from './pages/CustomHooks/DemoCustomHook'
 import HOCDemo from './pages/HOCDemo/HOCDemo'
+import ContainerDemo from './pages/HOCDemo/ContainerDemo'
 
 
 
@@ -76,6 +77,7 @@ createRoot(document.getElementById('root')).render(
                     <Route path='hook-toi-uu' element={<HookToiUu />}></Route>
                     <Route path='custom-hook' element={<DemoCustomHook />}></Route>
                     <Route path='hoc-demo' element={<HOCDemo />}></Route>
+                    <Route path='container-component-demo' element={<ContainerDemo />}></Route>
                     <Route path='*' element={<Navigate to={'/'} />}></Route>
                 </Route>
             </Routes>

@@ -30,9 +30,7 @@ export const HeaderHome = () => {
                     <NavLink className={({ isActive }) => isActive ? "nav-link bg-light text-dark" : "nav-link"} to="/contact" aria-current="page">Contact <span className="visually-hidden">(current)</span></NavLink>
                 </li>
 
-                <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link bg-light text-dark" : "nav-link"} to="/hoc-demo" aria-current="page">HOC Demo <span className="visually-hidden">(current)</span></NavLink>
-                </li>
+        
                 <li className="nav-item">
                     <NavLink className={({ isActive }) => isActive ? "nav-link bg-light text-dark" : "nav-link"} to="/hook-toi-uu" aria-current="page">Hook Toi Uu <span className="visually-hidden">(current)</span></NavLink>
                 </li>
@@ -44,6 +42,9 @@ export const HeaderHome = () => {
                     <NavLink className={({ isActive }) => isActive ? "nav-link bg-light text-dark" : "nav-link"} to="/hoc-demo" aria-current="page">HOC <span className="visually-hidden">(current)</span></NavLink>
                 </li>
 
+                 <li className="nav-item">
+                    <NavLink className={({ isActive }) => isActive ? "nav-link bg-light text-dark" : "nav-link"} to="/container-component-demo" aria-current="page">Container Component <span className="visually-hidden">(current)</span></NavLink>
+                </li>
 
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">React-router-com</a>
