@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client'
 //css cho toàn ứng dụng
 import './assets/css/index.css'
-
 import HomePage from './pages/HomePage'
 import DataBinding from './pages/DataBinding'
 import CarDemo from './pages/StateDemo/CarDemo'
@@ -42,7 +41,11 @@ import HookToiUu from './pages/HookToiUu/HookToiUu'
 import DemoCustomHook from './pages/CustomHooks/DemoCustomHook'
 import HOCDemo from './pages/HOCDemo/HOCDemo'
 import ContainerDemo from './pages/HOCDemo/ContainerDemo'
-
+import DrawerContainer from './pages/HOC/DrawerContainer'
+import DemoFormikYup from './pages/ReactFormDemo/DemoFormikYup'
+import ResponsiveComponent from './pages/HOC/ResponsiveComponent'
+import DeskTopHome from './pages/HomePage/DeskTopHome'
+import MobileHome from './pages/HomePage/MobileHome'
 
 
 createRoot(document.getElementById('root')).render(
@@ -50,6 +53,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <Provider store={store}>
             {/* <HeaderHome /> */}
+            <DrawerContainer />
             <Routes>
                 <Route path='' element={<HomeTemplate />} >
                     <Route index element={<GetAllProductPage />} ></Route>
@@ -78,6 +82,8 @@ createRoot(document.getElementById('root')).render(
                     <Route path='custom-hook' element={<DemoCustomHook />}></Route>
                     <Route path='hoc-demo' element={<HOCDemo />}></Route>
                     <Route path='container-component-demo' element={<ContainerDemo />}></Route>
+                    <Route path='formik' element={<DemoFormikYup />}></Route>
+                    <Route path='responsive-demo' element={<ResponsiveComponent Component={<DeskTopHome />} MobileComponent={<MobileHome />} />} ></Route>
                     <Route path='*' element={<Navigate to={'/'} />}></Route>
                 </Route>
             </Routes>

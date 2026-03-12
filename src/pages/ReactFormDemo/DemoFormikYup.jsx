@@ -1,10 +1,12 @@
 //Thư viện formik và yup
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useFormik} from 'formik';
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { changeFunctionSubmit } from '../../redux/reducers/DrawerReducer';
 const DemoFormikYup = () => {
-
+    const dispatch = useDispatch();
     const userLoginForm = useFormik({
         initialValues:{
             email:'',
@@ -19,7 +21,14 @@ const DemoFormikYup = () => {
         onSubmit: (valueForm) => {
             console.log(valueForm);
         }
-    })
+    });
+
+    useEffect(()=>{
+        //Tại đây sẽ dispatch hàm userLoginForm.handleSubmit
+        const action = changeFunctionSubmit(userLoginForm.handleSubmit);
+
+        dispatch(action);
+    },[])
 
 
   return (

@@ -5,10 +5,10 @@ import { numberPeopleReducer } from './reducers/numPeopleReducer';
 import { phoneDetailReducer } from './reducers/phoneDetailReducer';
 import  BTGioHangReducer  from './reducers/BTGioHangReducer';
 import BTXucXacReducer from './reducers/BTXucXacReducer'
+import DrawerReducer from './reducers/DrawerReducer'
 /*
     reducer: là hàm trả về state, khi state thay đổi thì component nào follow từ state sẽ tự động chạy lại (render lại). Hàm này sẽ được kích hoạt khi ứng dụng khởi tạo và mỗi lần gửi dữ liệu lên
 */
-
 
 
 export const store = configureStore({
@@ -23,7 +23,8 @@ export const store = configureStore({
         numPeopleReducer:numberPeopleReducer,
         phoneDetailReducer,
         BTGioHangReducer, //object literal 
-        BTXucXacReducer:BTXucXacReducer
-
+        BTXucXacReducer:BTXucXacReducer,
+        DrawerReducer:DrawerReducer
     }
 })
+
