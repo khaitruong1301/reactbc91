@@ -16,7 +16,7 @@ const LoginPage = () => {
       password: "",
     },
     onSubmit: (values) => {
-      dispatch(loginActionThunk(values))
+      dispatch(loginActionThunk(values));
     },
   });
   //điều hướng sau khi đăng nhập thành công
@@ -54,7 +54,6 @@ const LoginPage = () => {
                       value={formData.values.email}
                       onChange={formData.handleChange}
                     />
-                    
                   </div>
 
                   <div className="mb-3">
