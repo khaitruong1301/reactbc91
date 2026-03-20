@@ -11,6 +11,7 @@ import DrawerReducer from "./reducers/DrawerReducer";
 */
 import ProductPageReducer from "./reducers/ProductPageReducer";
 import UserReducer from "./reducers/UserReducer";
+import userLoginReducer from "./reducers/UserLoginReducer";
 
 export const store = configureStore({
   reducer: {
@@ -28,5 +29,7 @@ export const store = configureStore({
     DrawerReducer: DrawerReducer,
     ProductPageReducer: ProductPageReducer,
     UserReducer: UserReducer,
+    userLoginReducer: userLoginReducer
+
   },
 });

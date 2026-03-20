@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import DataBinding from "./pages/DataBinding";
 import CarDemo from "./pages/StateDemo/CarDemo";
 //import react router dom
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate,unstable_HistoryRouter as HistoryBrowser } from "react-router-dom";
 import { HeaderHome } from "./components/HeaderHome";
 import Register from "./pages/Register";
 import About from "./pages/About";
@@ -50,14 +50,21 @@ import ProductPage from "./pages/ReduxThunk/ProductPage";
 import ProductDetail from "./pages/ReduxThunk/ProductDetail";
 import LoginPage from "./pages/ReduxThunk/LoginPage/LoginPage";
 import DemoAntd from "./pages/Antd/DemoAntd";
+
+import {createBrowserHistory} from'history'
+
+//tương ứng với useNavigate trong component, tuy nhiên có thể sử dụng được ở file không phải component như file cấu hình redux, file cấu hình router
+export const history = createBrowserHistory();
+
+
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <HistoryBrowser history={history}>
     <Provider store={store}>
       {/* <HeaderHome /> */}
       <DrawerContainer />
       <Routes>
         <Route path="" element={<HomeTemplate />}>
-          <Route index element={<GetAllProductPage />}></Route>
+          <Route index element={<ResponsiveComponent Component={<GetAllProductPage />} MobileComponent={<MobileHome />}/>}></Route>
           <Route path="index" element={<HomePage />}></Route>
           <Route path="data-binding" element={<DataBinding />}></Route>
           <Route path="change-carcolor" element={<CarDemo />}></Route>
@@ -67,10 +74,11 @@ createRoot(document.getElementById("root")).render(
           <Route path="login" element={<Login />}></Route>
           <Route path="cart" element={<BaiTapGioHang />}></Route>
           <Route path="demo-useNavigate" element={<DemoUserNavigate />}></Route>
-          <Route path="profile" element={<Profile />}></Route>
           <Route path="forgot-pass" element={<ForgotPass />}></Route>
           <Route path="detail/:id" element={<Detail />}></Route>
           <Route path="search" element={<Search />}></Route>
+          <Route path="profile" element={<Profile />}></Route>
+
           <Route
             path="redux-changenumber"
             element={<DemoChangeNumber />}
@@ -138,5 +146,5 @@ createRoot(document.getElementById("root")).render(
         </Route>
       </Routes>
     </Provider>
-  </BrowserRouter>,
+  </HistoryBrowser>,
 );
