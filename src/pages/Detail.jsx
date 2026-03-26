@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
+import { httpClient } from '../util/Config';
 
 
 //Nhận param từ url (bước 1)
@@ -79,7 +80,7 @@ const Detail = () => {
     //Gọi api dựa trên parametter
     const getProductDetailApi =async () =>{
         try{
-            const res = await axios.get(`https://apistore.cybersoft.edu.vn/api/Product/getbyid?id=${params.id}`);
+            const res = await httpClient.get(`/api/Product/getbyid?id=${params.id}`);
             //Sau khi lấy dữ liệu từ api về thì đưa vào state
 
             setProductDetail(res.data.content);

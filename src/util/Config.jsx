@@ -85,11 +85,24 @@ httpClient.interceptors.request.use(config => {
 httpClient.interceptors.response.use(response => {
     return response;
 }, error => {
-    if (error.response.status === 401) {
+    if (error.response.status === 401 ) {
         //Xử lý lỗi xác thực, có thể là token hết hạn hoặc không có token
         alert('Cần phải đăng nhập mới vào được!');
         history.push('/login');
+    }else if (error.response.status === 400) {
+        alert('Dữ liệu gửi lên không hợp lệ!');
+        history.push('/');
+    }else if (error.response.status === 404) {
+        alert('Không tìm thấy tài nguyên!');
+        history.push('/');
+    }else if (error.response.status === 403) {
+        alert('Bạn không có quyền truy cập vào tài nguyên này!');
+        history.push('/');
+    }else if (error.response.status === 500) {
+        alert('Hệ thống đang gặp sự cố, vui lòng thử lại sau!');
+        history.push('/');
     }
+
     return Promise.reject(error);
 });
 
@@ -111,3 +124,6 @@ httpClient.interceptors.response.use(response => {
     500: Internal server error lỗi từ phía server (lỗi code, lỗi server, lỗi database,...) - lỗi xảy ra trên server nhưng chưa xử lý nguyên nhân có thể do frontend gửi dữ liệu không hợp lệ mà backend chưa có code xử lý, hoặc do lỗi logic backend 
     => Đối với FE dev thì nên trao đổi nhỏ nhẹ với BE để tìm cách giải quyết vấn đề tuy nhiên kiểm tra bằng postman truóc hoặc swagger
 */  
+
+
+

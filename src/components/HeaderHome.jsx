@@ -6,9 +6,31 @@
     ->tạo bằng snippet (rafce)
 */
 
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { ACCESSTOKEN, USERLOGIN } from "../util/Config";
 
 export const HeaderHome = () => {
+  const {userLogin} = useSelector(state => state.userLoginReducer);
+
+  const renderLogin = () => {
+    if(userLogin) {
+      return (
+        <>
+          <NavLink className="nav-link" to="/profile">{userLogin}</NavLink>
+          <button className="btn btn-link nav-link mx-2" onClick={logout}>Logout</button>
+        </>
+      );
+    }
+    return <NavLink className="nav-link" to="/login">Login</NavLink>
+  }
+
+  const logout = () => {
+    localStorage.removeItem(ACCESSTOKEN);
+    localStorage.removeItem(USERLOGIN);
+    window.location.href = '/login'; //gọi reload lại trang (đồng với bấm phím f5 )
+  }
+
   //bs5-navbar-background
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -27,19 +49,9 @@ export const HeaderHome = () => {
       <div className="collapse navbar-collapse" id="collapsibleNavId">
         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
           <li className="nav-item">
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav-link bg-light text-dark" : "nav-link"
-              }
-              to="/login"
-              aria-current="page"
-              style={({ isActive }) =>
-                isActive ? { border: "3px solid orange" } : {}
-              }
-            >
-              Login <span className="visually-hidden">(current)</span>
-            </NavLink>
+           {renderLogin()}
           </li>
+      
 
           <li className="nav-item">
             <NavLink
